@@ -16,7 +16,7 @@ class Header extends React.Component {
           <img src={Image} alt="Logo" className="w-16" />
           <span className="text-black text-xl ml-8">{title}</span>
         </div>
-        <div className="flex items-center absolute right-0">
+        <div className="flex items-center absolute right-0 mr-8">
           <Button color="primary">
             {home}
           </Button>
