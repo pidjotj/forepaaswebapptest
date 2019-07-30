@@ -23,14 +23,14 @@ import Header from '../../components/Header';
 const App = () => (
   <div className="app-wrapper">
     <Helmet
-      titleTemplate="%s - React.js Boilerplate"
-      defaultTitle="React.js Boilerplate"
+      titleTemplate="%s - Movie Finder"
+      defaultTitle="Movie Finder"
     >
-      <meta name="description" content="A React.js Boilerplate application" />
+      <meta name="description" content="A React.js Boilerplate application for ForePaas technical test" />
     </Helmet>
     <Header />
     <Switch>
-      <Route exact path="/" component={HomePage} />
+      {/*<Route exact path="/" component={HomePage} />*/}
       <Route path="/search" component={SearchPage} />
     </Switch>
   </div>
