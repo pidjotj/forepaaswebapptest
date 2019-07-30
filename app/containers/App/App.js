@@ -16,6 +16,7 @@ import { Switch, Route } from 'react-router-dom';
 // import Header from 'components/Header';
 // import Footer from 'components/Footer';
 import './style.css';
+import Header from '../../components/Header';
 
 const App = () => (
   <div className="app-wrapper">
@@ -25,7 +26,7 @@ const App = () => (
     >
       <meta name="description" content="A React.js Boilerplate application" />
     </Helmet>
-    niwevhiowjnv
+    <Header />
   </div>
 );
 

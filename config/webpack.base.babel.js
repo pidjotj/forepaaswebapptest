@@ -21,23 +21,6 @@ module.exports = (options) => ({
   module: {
     rules: [
       {
-        use: [
-          // ...
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: [
-                // eslint-disable-next-line global-require
-                require('tailwindcss'),
-                // eslint-disable-next-line global-require
-                require('autoprefixer'),
-              ],
-            },
-          },
-        ]
-      },
-      {
         test: /\.js$/, // Transform all .js files required somewhere with Babel
         exclude: /node_modules/,
         use: {
@@ -54,7 +37,16 @@ module.exports = (options) => ({
       {
         // Preprocess 3rd party .css files located in node_modules
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader', {
+          loader: 'postcss-loader',
+          options: {
+            ident: 'postcss',
+            plugins: [
+              require('tailwindcss'),
+              require('autoprefixer'),
+            ],
+          }
+        }]
       },
       {
         test: /\.(eot|svg|otf|ttf|woff|woff2)$/,

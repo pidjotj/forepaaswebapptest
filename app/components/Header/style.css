@@ -1,0 +1,14 @@
+@import '../../styles/global-styles.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header {
+  text-align: left;
+}
+
+.text {
+  font-family: "Apple Braille";
+  font-size: xx-large;
+  margin-left: 12px;
+}
