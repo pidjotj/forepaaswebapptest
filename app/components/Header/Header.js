@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 import Image from './images/ticket.svg';
 import './style.css';
 
@@ -17,12 +18,16 @@ class Header extends React.Component {
           <span className="text-black text-xl ml-8">{title}</span>
         </div>
         <div className="flex items-center absolute right-0 mr-8">
-          <Button color="primary">
-            {home}
-          </Button>
-          <Button color="primary">
-            {search}
-          </Button>
+          <Link to="/">
+            <Button color="primary">
+              {home}
+            </Button>
+          </Link>
+          <Link to="/search">
+            <Button color="primary">
+              {search}
+            </Button>
+          </Link>
         </div>
       </div>
     );
