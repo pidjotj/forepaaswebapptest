@@ -4,3 +4,4 @@ export const ONCE_TILL_UNMOUNT = '@@saga-injector/once-till-unmount';
 
 // API
 export const API_KEY = 'api_key=ebc88d2e844f4ed1760eeddb4d5893d5';
+export const BASE_URL = 'https://api.themoviedb.or/3/';
