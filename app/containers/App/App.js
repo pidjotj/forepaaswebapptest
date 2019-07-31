@@ -10,7 +10,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Switch, Route } from 'react-router-dom';
 import HomePage from '../HomePage';
-import SearchPage from '../SearchPage/SearchPage';
+import SearchPage from '../SearchPage';
+import MovieDetailsPage from '../MovieDetailsPage';
 
 // import HomePage from 'containers/HomePage/Loadable';
 // import FeaturePage from 'containers/FeaturePage/Loadable';
@@ -32,6 +33,7 @@ const App = () => (
     <Switch>
       {/*<Route exact path="/" component={HomePage} />*/}
       <Route path="/search" component={SearchPage} />
+      <Route path="/" component={MovieDetailsPage} />
     </Switch>
   </div>
 );
