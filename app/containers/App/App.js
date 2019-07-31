@@ -32,9 +32,9 @@ const App = () => (
       </Helmet>
       <Header />
       <Switch>
-        {/*<Route exact path="/" component={HomePage} />*/}
+        <Route exact path="/" component={HomePage} />
         <Route path="/search" component={SearchPage} />
-        <Route path="/" component={MovieDetailsPage} />
+        <Route path="/details" component={MovieDetailsPage} />
       </Switch>
     </div>
   </div>
