@@ -5,7 +5,7 @@ import Image from '../../images/logo.svg';
 import './style.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
-class Header extends React.Component {
+class Header extends React.PureComponent {
   render() {
     // TODO Creer un ficher constante
     const home = 'Home';
