@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-describe('reducer injectors', () => {
+describe('reducers injectors', () => {
   let store;
   let injectReducer;
 
@@ -56,13 +56,13 @@ describe('reducer injectors', () => {
       expect(() => injectReducer('test', reducer)).not.toThrow();
     });
 
-    it("should validate a reducer and reducer's key", () => {
+    it("should validate a reducers and reducers's key", () => {
       expect(() => injectReducer('', reducer)).toThrow();
       expect(() => injectReducer(1, reducer)).toThrow();
       expect(() => injectReducer(1, 1)).toThrow();
     });
 
-    it('given a store, it should provide a function to inject a reducer', () => {
+    it('given a store, it should provide a function to inject a reducers', () => {
       injectReducer('test', reducer);
 
       const actual = store.getState().test;
@@ -71,7 +71,7 @@ describe('reducer injectors', () => {
       expect(actual).toEqual(expected);
     });
 
-    it('should not assign reducer if already existing', () => {
+    it('should not assign reducers if already existing', () => {
       store.replaceReducer = jest.fn();
       injectReducer('test', reducer);
       injectReducer('test', reducer);
@@ -79,7 +79,7 @@ describe('reducer injectors', () => {
       expect(store.replaceReducer).toHaveBeenCalledTimes(1);
     });
 
-    it('should assign reducer if different implementation for hot reloading', () => {
+    it('should assign reducers if different implementation for hot reloading', () => {
       store.replaceReducer = jest.fn();
       injectReducer('test', reducer);
       injectReducer('test', identity);

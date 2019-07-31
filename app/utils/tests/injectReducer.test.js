@@ -34,7 +34,7 @@ describe('injectReducer decorator', () => {
     reducerInjectors.default.mockClear();
   });
 
-  it('should inject a given reducer', () => {
+  it('should inject a given reducers', () => {
     shallow(<ComponentWithReducer />, { context: { store } });
 
     expect(injectors.injectReducer).toHaveBeenCalledTimes(1);

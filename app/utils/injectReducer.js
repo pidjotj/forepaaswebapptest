@@ -5,7 +5,7 @@ import { ReactReduxContext } from 'react-redux';
 import getInjectors from './reducerInjectors';
 
 /**
- * Dynamically injects a reducer
+ * Dynamically injects a reducers
  */
 export default ({ key, reducer }) => (WrappedComponent) => {
   class ReducerInjector extends React.Component {
