@@ -22,19 +22,21 @@ import './style.css';
 import Header from '../../components/Header';
 
 const App = () => (
-  <div className="app-wrapper">
-    <Helmet
-      titleTemplate="%s - Movie Finder"
-      defaultTitle="Movie Finder"
-    >
-      <meta name="description" content="A React.js Boilerplate application for ForePaas technical test" />
-    </Helmet>
-    <Header />
-    <Switch>
-      {/*<Route exact path="/" component={HomePage} />*/}
-      <Route path="/search" component={SearchPage} />
-      <Route path="/" component={MovieDetailsPage} />
-    </Switch>
+  <div className="h-screen w-screen background">
+    <div className="app-wrapper">
+      <Helmet
+        titleTemplate="%s - Movie Finder"
+        defaultTitle="Movie Finder"
+      >
+        <meta name="description" content="A React.js Boilerplate application for ForePaas technical test" />
+      </Helmet>
+      <Header />
+      <Switch>
+        {/*<Route exact path="/" component={HomePage} />*/}
+        <Route path="/search" component={SearchPage} />
+        <Route path="/" component={MovieDetailsPage} />
+      </Switch>
+    </div>
   </div>
 );
 
