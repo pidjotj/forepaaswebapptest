@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { getPopularMovies } from './store/actions/home.action';
 import axios from 'axios';
 import { API_KEY, BASE_URL } from '../../utils/constants';
-import PopularMoviesList from '../../components/PopularMoviesList';
+import PopularMoviesList from '../../components/Lists/PopularMoviesList';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class HomePage extends Component {

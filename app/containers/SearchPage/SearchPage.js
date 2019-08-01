@@ -1,4 +1,5 @@
 import React from 'react';
+import MovieCard from '../../components/Cards/MovieCard';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class SearchPage extends React.Component {
@@ -6,6 +7,7 @@ class SearchPage extends React.Component {
     return (
       <div>
         Search page
+        <MovieCard />
       </div>
     );
   }
