@@ -9,7 +9,8 @@ import PopularMoviesList from '../../components/Lists/PopularMoviesList';
 // eslint-disable-next-line react/prefer-stateless-function
 class HomePage extends Component {
   componentWillMount() {
-    getPopularMovies();
+    // eslint-disable-next-line react/prop-types,react/destructuring-assignment
+    this.props.getPopularMovies();
     const POPULAR_MOVIES_URL = 'discover/movie?language=en&sort_by=popularity.desc&include_adult=false&';
     axios.get(`${BASE_URL}${POPULAR_MOVIES_URL}&${API_KEY}`).then((response) => {
       console.log('~~ easyResponse', response);

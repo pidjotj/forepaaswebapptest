@@ -10,14 +10,14 @@ class MovieCard extends Component {
         {/* eslint-disable-next-line global-require */}
         <img src={require('../../../images/troie.jpg')} alt="MovieImage" className="border-lg" />
         <div className="relative flex items-center">
-          <Typography className="text-white rounded-full" variant="h7">
+          <Typography className="text-white rounded-full" variant="h6">
             Troy
           </Typography>
-          <Typography className="text-white rounded-full absolute right-0" variant="h7">
+          <Typography className="text-white rounded-full absolute right-0" variant="h6">
             16k
           </Typography>
         </div>
-        <Typography className="text-white rounded-full" variant="h7">
+        <Typography className="text-white rounded-full" variant="h6">
           1992
         </Typography>
       </div>
