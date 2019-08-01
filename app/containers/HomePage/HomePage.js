@@ -2,28 +2,37 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getPopularMovies } from './store/actions/home.action';
-import axios from 'axios';
-import { API_KEY, BASE_URL } from '../../utils/constants';
 import PopularMoviesList from '../../components/Lists/PopularMoviesList';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class HomePage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tenPopularMovies: [],
+    };
+  }
+
   componentWillMount() {
     // eslint-disable-next-line react/prop-types,react/destructuring-assignment
     this.props.getPopularMovies();
-    const POPULAR_MOVIES_URL = 'discover/movie?language=en&sort_by=popularity.desc&include_adult=false&';
-    axios.get(`${BASE_URL}${POPULAR_MOVIES_URL}&${API_KEY}`).then((response) => {
-      console.log('~~ easyResponse', response);
-    }).catch((error) => {
-      console.log(error.status);
-    });
+  }
+
+  componentDidMount() {
+    // eslint-disable-next-line react/prop-types,react/destructuring-assignment
+    const tempPopularMovies = this.props.popularMovies.popularMovies.data.results.slice(0, 10);
+    console.log('~~ tempPop', tempPopularMovies);
+    this.setState({ tenPopularMovies: tempPopularMovies });
   }
 
   render() {
-    console.log('~~ popularMovies', this.props.popularMovies);
+    // eslint-disable-next-line react/prop-types
+    const { tenPopularMovies } = this.state;
+    const noMovie = <div> <span>Error</span> </div>;
+    const movies = <PopularMoviesList movies={tenPopularMovies} />;
     return (
       <div>
-        <PopularMoviesList />
+        {tenPopularMovies !== [] ? movies : noMovie}
       </div>
     );
   }
