@@ -61,6 +61,10 @@ module.exports = (options) => ({
         use: 'html-loader'
       },
       {
+        test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
+        loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
+      },
+      {
         test: /\.(mp4|webm)$/,
         use: {
           loader: 'url-loader',
