@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 
+
 // eslint-disable-next-line react/prefer-stateless-function
 class PopularMoviesList extends Component {
   render() {
@@ -8,7 +9,7 @@ class PopularMoviesList extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 3,
+      slidesToShow: 1,
       slidesToScroll: 1
     };
     return (
@@ -33,8 +34,6 @@ class PopularMoviesList extends Component {
             <h3>6</h3>
           </div>
         </Slider>
-        <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
       </div>
     );
   }

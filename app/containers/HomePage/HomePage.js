@@ -22,7 +22,6 @@ class HomePage extends Component {
     console.log('~~ popularMovies', this.props.popularMovies);
     return (
       <div>
-        HomePage
         <PopularMoviesList />
       </div>
     );
