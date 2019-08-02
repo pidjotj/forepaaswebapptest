@@ -19,10 +19,12 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    // eslint-disable-next-line react/prop-types,react/destructuring-assignment
-    const tempPopularMovies = this.props.popularMovies.popularMovies.data.results.slice(0, 10);
-    console.log('~~ tempPop', tempPopularMovies);
-    this.setState({ tenPopularMovies: tempPopularMovies });
+    if (this.props.popularMovies) {
+      // eslint-disable-next-line react/prop-types,react/destructuring-assignment
+      const tempPopularMovies = this.props.popularMovies.popularMovies.data.results.slice(0, 10);
+      console.log('~~ tempPop', tempPopularMovies);
+      this.setState({ tenPopularMovies: tempPopularMovies });
+    }
   }
 
   render() {
