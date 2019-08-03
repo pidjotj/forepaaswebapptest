@@ -1,7 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
 import Typography from '@material-ui/core/es/Typography/Typography';
 import MovieCard from '../../Cards/MovieCard';
+
+const styles = (theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper,
+  },
+  gridList: {
+    width: 500,
+    height: 450,
+  },
+});
 
 // eslint-disable-next-line react/prefer-stateless-function
 class SearchMoviesList extends Component {
@@ -28,10 +45,13 @@ class SearchMoviesList extends Component {
       console.log('okok', movies);
     }
     return (
-      <div>
-        {movies ? movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        )) : movieNull}
+      <div className="mt-24">
+        {movies
+          ? <GridList cellHeight={160} className="" cols={3}>
+            {movies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
+          </GridList> : movieNull}
       </div>
     );
   }

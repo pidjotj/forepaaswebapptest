@@ -9,20 +9,20 @@ class MovieCard extends Component {
     let temp = {};
     const { movie } = this.props;
     return (
-      <div className="w-2/12">
+      <div className="w-2/12 ml-12">
         {/* eslint-disable-next-line global-require */}
-        <img src={BASE_URL_IMAGE + movie.poster_path} alt="MovieImage" className="border-lg" />
+        <img src={BASE_URL_IMAGE + movie.poster_path} alt="MovieImage" className="border-lg rounded-lg shadow" />
         <div className="relative flex items-center">
-          <Typography className="text-white rounded-full" variant="h6">
+          <span className="text-white font-mono rounded-full">
             {movie.title}
-          </Typography>
-          <Typography className="text-white rounded-full absolute right-0" variant="h6">
+          </span>
+          <span className="text-white font-mono rounded-full absolute right-0">
             16k
-          </Typography>
+          </span>
         </div>
-        <Typography className="text-white rounded-full" variant="h6">
+        <span className="text-white font-mono rounded-full">
           1992
-        </Typography>
+        </span>
       </div>
     );
   }
