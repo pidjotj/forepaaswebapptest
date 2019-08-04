@@ -23,11 +23,11 @@ class PopularMovieCard extends Component {
           <div>
             <img src={movie.poster_path ? BASE_URL_IMAGE + movie.poster_path : noPoster} alt="MovieImage" className="border-lg rounded-lg shadow" />
           </div>
-          <span className="text-white text-sm font-mono rounded-full pt-2 pr-2">
+          <span className=" text-white text-sm font-mono rounded-full pt-2 pr-2">
             {movie.title}
           </span>`
           <div className="relative flex items-center">
-            <span className="text-gray-800 text-sm font-mono rounded-full">
+            <span className="text-gray-500 text-sm font-mono rounded-full">
               {releaseDate[0]}
             </span>
             <span className="text-white text-sm font-mono rounded-full absolute right-0">

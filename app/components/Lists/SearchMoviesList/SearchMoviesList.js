@@ -84,16 +84,19 @@ class SearchMoviesList extends Component {
     return (
       <React.Fragment>
         <div className="mt-12">
+          <span className="text-white ml-12 font-mono text-xl">
+            Tous les films
+          </span>
           <Input
-            autoFocus
-            className="w-3/12 bg-white pl-3 pr-3 mr-10 float-right rounded-lg"
+            autoFocus={false}
+            className="w-3/12 bg-white pl-3 pr-3 mr-10 float-right rounded-lg "
             onChange={(e) => this.checkResearch(e.target.value)}
             placeholder="Rechercher ..."
           />
         </div>
         <div className="mt-12">
           {movies
-            ? <GridList cellHeight={200} className="justify-center " cols={2}>
+            ? <GridList cellHeight={200} className="justify-center">
               {movies.map((movie) => (
                 <MovieCard key={movie.id} movie={movie} />
               ))}
