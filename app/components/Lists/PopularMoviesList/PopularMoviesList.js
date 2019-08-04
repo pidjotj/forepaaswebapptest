@@ -11,16 +11,17 @@ const PopularMoviesList = (props) => {
   // eslint-disable-next-line react/prop-types
   const { popularMovies } = props;
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    dots: true,
   };
   console.log('~~ movies', popularMovies);
   const moviesNull = <span>Pas de films</span>;
   const moviesNotNull = (
-    <div className="w-full">
+    <div className="w-full h-screen">
       <Slider {...settings}>
         {popularMovies.map((movie) => (
           <div key={movie.id}>
@@ -31,7 +32,7 @@ const PopularMoviesList = (props) => {
     </div>
   );
   return (
-    <div className="flex items-center justify-center mt-24">
+    <div className="flex items-center justify-center mt-6">
       {popularMovies ? moviesNotNull : moviesNull}
     </div>
   );

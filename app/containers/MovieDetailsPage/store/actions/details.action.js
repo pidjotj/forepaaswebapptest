@@ -11,7 +11,7 @@ export function getDetails(movie_id) {
       console.log('~~ details reponse', response);
       dispatch({
         type: GET_DETAILS,
-        payload: response
+        payload: response.data
       });
     }).catch((error) => {
       console.error('~~ detailsError', error);

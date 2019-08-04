@@ -6,20 +6,10 @@ import { getDetails } from './store/actions/details.action';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class MovieDetailsPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentMovieDetails: []
-    };
-  }
-
-  componentDidMount() {
-    const { movieDetails } = this.props;
-    console.log('~~~ movieDetails', movieDetails);
-    if (movieDetails) {
-      this.setState({ currentMovieDetails: movieDetails });
-      console.log('~~ movieDetailsAftersetState', this.state.currentMovieDetails);
-    }
+  componentWillMount() {
+    const { getDetails } = this.props;
+    const { movie } = this.props.location.state;
+    getDetails(movie.id);
   }
 
   render() {
@@ -37,12 +27,6 @@ class MovieDetailsPage extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    movieDetails: state.detailsReducer
-  };
-}
-
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
@@ -50,4 +34,4 @@ function mapDispatchToProps(dispatch) {
     }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieDetailsPage);
+export default connect(null, mapDispatchToProps)(MovieDetailsPage);

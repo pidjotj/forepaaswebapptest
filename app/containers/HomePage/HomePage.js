@@ -23,8 +23,8 @@ class HomePage extends Component {
     const noMovie = <div> <span>Error</span> </div>;
     const movies = <PopularMoviesList />;
     return (
-      <div className="bg-scroll">
-        <span className="text-white mt-8 ml-4">
+      <div className="bg-scroll mt-12">
+        <span className="text-white ml-12 font-mono text-xl">
           Les 10 films les plus populaires du moment
         </span>
         {tenPopularMovies !== null ? movies : noMovie}
