@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { BASE_URL_IMAGE } from '../../../utils/constants';
 
@@ -33,7 +34,7 @@ class MovieDetailsCard extends Component {
 }
 
 MovieDetailsCard.propTypes = {
-  currentMovie: PropTypes.object.isRequired
+  currentMovie: PropTypes.object
 };
 
 export default MovieDetailsCard;

@@ -10,7 +10,7 @@ export const BASE_URL = 'https://api.themoviedb.org/3/';
 export const BASE_URL_IMAGE = 'https://image.tmdb.org/t/p/w500/';
 
 // API SearchInput
-export const BASE_URL_SEARCH = `${BASE_URL}search/movie?${API_KEY}&query=`;
+export const BASE_URL_SEARCH = `${BASE_URL}search/movie?${API_KEY}&language=fr&query=`;
 
 // API Details
 export const BASE_URL_DETAILS = `${BASE_URL}movie/`;

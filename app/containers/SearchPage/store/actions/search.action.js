@@ -13,7 +13,7 @@ export function getResearchedMovie(term) {
       console.log('search response', response);
       dispatch({
         type: GET_RESEARCHED_MOVIE,
-        payload: response
+        payload: response.data.results
       });
     }).catch((error) => {
       console.error(error);

@@ -1,7 +1,7 @@
 import * as Actions from '../actions/search.action';
 
 const initialState = {
-  researchedMovies: []
+  researchedMovies: [],
 };
 
 const searchReducer = function (state = initialState.researchedMovies, action) {

@@ -9,35 +9,29 @@ class MovieDetailsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentMovie: [],
       currentMovieDetails: []
     };
   }
 
   componentDidMount() {
-    // eslint-disable-next-line react/prop-types,react/destructuring-assignment
-    const { movie } = this.props.location.state;
     const { movieDetails } = this.props;
-    console.log('movieDetailsProps', movie);
     console.log('~~~ movieDetails', movieDetails);
-    if (movie) {
-      this.setState({ currentMovie: movie });
-      this.props.getDetails(movie.id);
-      if (movieDetails) {
-        this.setState({ currentMovieDetails: movieDetails });
-        console.log('~~ movieDetailsAftersetState', this.state.currentMovieDetails)
-      }
+    if (movieDetails) {
+      this.setState({ currentMovieDetails: movieDetails });
+      console.log('~~ movieDetailsAftersetState', this.state.currentMovieDetails);
     }
   }
 
   render() {
-    const { currentMovie } = this.state;
-    const movieNotNull = <MovieDetailsCard currentMovie={currentMovie} />;
+    // this.props.location.state -> data from <Link to />
+    // eslint-disable-next-line react/prop-types,react/destructuring-assignment
+    const { movie } = this.props.location.state;
+    const movieNotNull = <MovieDetailsCard currentMovie={movie} />;
     const movieNull = <span>Il ny a pas de film</span>;
     return (
       <div className="h-screen">
         MovieDetailsPage
-        {currentMovie ? movieNotNull : movieNull}
+        {movie ? movieNotNull : movieNull}
       </div>
     );
   }
