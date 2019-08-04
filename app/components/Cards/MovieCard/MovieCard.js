@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Typography } from '@material-ui/core';
 import { BASE_URL_IMAGE } from '../../../utils/constants';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class MovieCard extends Component {
   render() {
-    let temp = {};
     const { movie } = this.props;
     const releaseDate = movie.release_date.split('-');
     return (

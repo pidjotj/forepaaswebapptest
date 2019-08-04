@@ -20,7 +20,7 @@ class MovieDetailsPage extends React.Component {
 
   render() {
     const { currentMovie } = this.state;
-    const movieNotNull = <MovieDetailsCard movie={currentMovie} />;
+    const movieNotNull = <MovieDetailsCard currentMovie={currentMovie} />;
     const movieNull = <span>Il ny a pas de film</span>;
     return (
       <div>
