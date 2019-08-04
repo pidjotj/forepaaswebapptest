@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Typography } from '@material-ui/core';
 import { bindActionCreators } from 'redux';
 import { getPopularMovies } from './store/actions/home.action';
 import PopularMoviesList from '../../components/Lists/PopularMoviesList';
