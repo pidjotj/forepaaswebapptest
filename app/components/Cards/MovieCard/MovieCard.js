@@ -9,7 +9,7 @@ class MovieCard extends Component {
     const { movie } = this.props;
     const releaseDate = movie.release_date.split('-');
     return (
-      <div className="w-2/12 m-4">
+      <div className="w-2/12 h-auto m-4">
         <Link
           to={{
             pathname: '/details',
@@ -20,7 +20,7 @@ class MovieCard extends Component {
         >
           {/* eslint-disable-next-line global-require */}
           <div>
-            <img src={BASE_URL_IMAGE + movie.poster_path} alt="MovieImage" className="border-lg rounded-lg shadow"/>
+            <img src={BASE_URL_IMAGE + movie.poster_path} alt="MovieImage" className="border-lg rounded-lg shadow" />
           </div>
           <span className="text-white text-sm font-mono rounded-full pt-2 pr-2">
             {movie.title}

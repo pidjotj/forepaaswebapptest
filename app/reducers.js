@@ -6,7 +6,8 @@ import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import history from 'utils/history';
 import homeReducer from './containers/HomePage/store/reducers/home.reducer';
-import searchReducer from './containers/SearchPage/store/reducers/search.reducer'
+import searchReducer from './containers/SearchPage/store/reducers/search.reducer';
+import detailsReducer from './containers/MovieDetailsPage/store/reducers/details.reducer';
 
 /**
  * Merges the main reducers with the router state and dynamically injected reducers
@@ -16,6 +17,7 @@ export default function createReducer() {
     router: connectRouter(history),
     moviesReducer: homeReducer,
     movieSearchedReducer: searchReducer,
+    movieDetailsReducer: detailsReducer,
   });
 
   return rootReducer;

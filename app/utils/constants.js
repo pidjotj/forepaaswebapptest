@@ -11,3 +11,6 @@ export const BASE_URL_IMAGE = 'https://image.tmdb.org/t/p/w500/';
 
 // API Search
 export const BASE_URL_SEARCH = `${BASE_URL}search/movie?${API_KEY}&query=`;
+
+// API Details
+export const BASE_URL_DETAILS = `${BASE_URL}movie/`;
