@@ -37,18 +37,20 @@ class SearchMoviesList extends Component {
   render() {
     const { popularMovies, researchedMovies } = this.props;
     let movies = [];
-    if (researchedMovies.length > 0) {
-      movies = researchedMovies;
+    if (researchedMovies) {
+      if (researchedMovies.length > 0) {
+        movies = researchedMovies;
+      }
     } else {
       movies = popularMovies;
     }
     const movieNull = <Typography className="text-white rounded-full" variant="h6">Pas de films</Typography>;
     return (
       <React.Fragment>
-        <div className="mt-12 ">
+        <div className="mt-12">
           <Input
             autoFocus
-            className="w-4/12 bg-white pl-3 pr-3 rounded-lg"
+            className="w-3/12 bg-white pl-3 pr-3 mr-10 float-right rounded-lg"
             onChange={(e) => this.checkResearch(e.target.value)}
             placeholder="Rechercher ..."
           />

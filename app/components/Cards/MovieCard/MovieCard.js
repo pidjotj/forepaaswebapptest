@@ -8,6 +8,7 @@ class MovieCard extends Component {
   render() {
     const { movie } = this.props;
     const releaseDate = movie.release_date.split('-');
+    const noPoster = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUiSKTwcqe7rZMmfoFAcPG0Me7GgxmDO1Vo3mu_dCVaJf-C6lz';
     return (
       <div className="w-2/12 h-auto m-4">
         <Link
@@ -20,7 +21,7 @@ class MovieCard extends Component {
         >
           {/* eslint-disable-next-line global-require */}
           <div>
-            <img src={BASE_URL_IMAGE + movie.poster_path} alt="MovieImage" className="border-lg rounded-lg shadow" />
+            <img src={movie.poster_path ? BASE_URL_IMAGE + movie.poster_path : noPoster} alt="MovieImage" className="border-lg rounded-lg shadow" />
           </div>
           <span className="text-white text-sm font-mono rounded-full pt-2 pr-2">
             {movie.title}

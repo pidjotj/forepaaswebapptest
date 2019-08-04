@@ -7,6 +7,7 @@ import { BASE_URL_IMAGE } from '../../../utils/constants';
 class MovieDetailsCard extends Component {
   render() {
     const noSynopsis = "Il n'y a pas de synopsis";
+    const noPoster = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUiSKTwcqe7rZMmfoFAcPG0Me7GgxmDO1Vo3mu_dCVaJf-C6lz';
     const { currentMovie } = this.props;
     // TODO make split() work ???
     // const releaseDate = currentMovie.release_date.split('-');
@@ -14,7 +15,7 @@ class MovieDetailsCard extends Component {
       <div className="flex flex-row align-center justify-center content-center mt-8 ml-8">
         <div className="items-center w-4/12">
           {/* eslint-disable-next-line global-require */}
-          <img src={BASE_URL_IMAGE + currentMovie.poster_path} alt="imageDetailMovie" className="w-full rounded-lg" />
+          <img src={currentMovie.poster_path !== null ? BASE_URL_IMAGE + currentMovie.poster_path : noPoster} alt="imageDetailMovie" className="w-full rounded-lg" />
         </div>
         <div className="w-8/12 text-white font-mono pl-10">
           <div>
