@@ -1,10 +1,19 @@
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { Typography } from '@material-ui/core';
 import Image from '../../images/logo.svg';
 import './style.css';
 
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit,
+  },
+  input: {
+    display: 'none',
+  },
+});
 // eslint-disable-next-line react/prefer-stateless-function
 class Header extends React.PureComponent {
   render() {
@@ -36,4 +45,4 @@ class Header extends React.PureComponent {
   }
 }
 
-export default Header;
+export default withStyles(styles)(Header);

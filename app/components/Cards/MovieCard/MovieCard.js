@@ -24,17 +24,17 @@ class MovieCard extends Component {
           <div>
             <img src={BASE_URL_IMAGE + movie.poster_path} alt="MovieImage" className="border-lg rounded-lg shadow"/>
           </div>
+          <span className="text-white text-sm font-mono rounded-full pt-2 pr-2">
+            {movie.title}
+          </span>`
           <div className="relative flex items-center">
-            <span className="text-white font-mono rounded-full mr-2">
-              {movie.title}
+            <span className="text-gray-800 text-sm font-mono rounded-full">
+              {releaseDate[0]}
             </span>
-            <span className="text-white font-mono rounded-full absolute right-0">
-              {movie.vote_average}
+            <span className="text-white text-sm font-mono rounded-full absolute right-0">
+              {movie.vote_average}/10
             </span>
           </div>
-          <span className="text-gray-800 text-sm font-mono rounded-full">
-            {releaseDate[0]}
-          </span>
         </Link>
       </div>
     );
