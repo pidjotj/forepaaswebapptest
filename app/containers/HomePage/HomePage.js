@@ -33,8 +33,8 @@ class HomePage extends Component {
     const noMovie = <div> <span>Error</span> </div>;
     const movies = <PopularMoviesList movies={tenPopularMovies} />;
     return (
-      <div>
-        {tenPopularMovies !== [] ? movies : noMovie}
+      <div className="bg-scroll">
+        {tenPopularMovies !== null ? movies : noMovie}
       </div>
     );
   }

@@ -1,5 +1,5 @@
 .app-wrapper {
-  max-width: calc(1000px + 16px * 1.5);
+  max-width: calc(1200px + 16px * 1.5);
   margin: 0 auto;
   display: flex;
   min-height: 100%;
@@ -8,6 +8,10 @@
 }
 
 .background {
-  background-image: url('../../images/background-img.png');
+  padding: 0;
+  margin: 0;
+  background-image: url('https://i.ytimg.com/vi/n3dNkooj8rM/maxresdefault.jpg');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

@@ -47,7 +47,7 @@ class SearchMoviesList extends Component {
     return (
       <div className="mt-24">
         {movies
-          ? <GridList cellHeight={160} className="" cols={3}>
+          ? <GridList cellHeight={200} className="justify-center " cols={2}>
             {movies.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
