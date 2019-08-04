@@ -6,6 +6,7 @@ import { getResearchedMovie } from './store/actions/search.action';
 import { BASE_URL_SEARCH } from '../../utils/constants';
 import { getPopularMovies } from '../HomePage/store/actions/home.action';
 import SearchMoviesList from '../../components/Lists/SearchMoviesList';
+import SearchInput from '../../components/SearchInput';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class SearchPage extends React.Component {
@@ -28,6 +29,13 @@ class SearchPage extends React.Component {
     }
   }
 
+  checkResearch = (value) => {
+    setTimeout(
+      this.props.getResearchedMovie(value),
+      1000
+    );
+  };
+
   render() {
     const { tenPopularMovies } = this.state;
     let temp = [];
@@ -39,6 +47,8 @@ class SearchPage extends React.Component {
     }
     return (
       <div>
+        {/* eslint-disable-next-line react/prop-types */}
+        <SearchInput onChange={(value) => this.checkResearch(value)} />
         <SearchMoviesList movies={temp} />
       </div>
     );
@@ -53,11 +63,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      getResearchedMovie,
-      getPopularMovies
-    }, dispatch);
+  return { getResearchedMovie: (e) => dispatch(getResearchedMovie(e)) };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);
