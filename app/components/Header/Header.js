@@ -1,38 +1,35 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import { Typography } from '@material-ui/core';
-import Image from '../../images/logo.svg';
 import './style.css';
 
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-  input: {
-    display: 'none',
-  },
-});
 // eslint-disable-next-line react/prefer-stateless-function
 class Header extends React.PureComponent {
   render() {
     // TODO Creer un ficher constante
-    const home = 'Home';
-    const search = 'Search';
+    const title = 'MOVIE';
+    const titleBis = 'FINDER';
+    const home = 'Acceuil';
+    const search = 'Recherche';
     return (
       <div className="flex items-center mt-8 relative">
-        <div className="flex items-center">
-          <img src={'https://cdn2.iconfinder.com/data/icons/movies-7/32/Movie_5-512.png'} alt="Logo" className="w-1/5 pl-12" />
-          <Typography className="text-white" variant="h4">
-            MovieFinder
-          </Typography>
-        </div>
+        <Link to="/">
+          <div className="flex items-center">
+            <img src={'https://cdn2.iconfinder.com/data/icons/movies-7/32/Movie_5-512.png'} alt="Logo" className="w-1/6 pl-12" />
+            <span className="ml-8 font-mono text-white text-2xl italic">
+              {title}
+            </span>
+            <span className="font-mono text-blue-400 text-2xl italic">
+              {titleBis}
+            </span>
+          </div>
+        </Link>
         <div className="flex items-center absolute right-0 mr-12">
           <Link to="/">
-            <Button color="primary" className="mr-12">
+            <Button color="primary">
               {home}
             </Button>
+            <span className="text-white">|</span>
           </Link>
           <Link to="/search">
             <Button color="primary">
@@ -45,4 +42,4 @@ class Header extends React.PureComponent {
   }
 }
 
-export default withStyles(styles)(Header);
+export default Header;
