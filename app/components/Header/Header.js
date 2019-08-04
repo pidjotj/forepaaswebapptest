@@ -1,8 +1,16 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import './style.css';
 
+const styles = (theme) => ({
+  button: {
+    margin: theme.spacing.unit,
+    color: 'white'
+  }
+});
 // eslint-disable-next-line react/prefer-stateless-function
 class Header extends React.PureComponent {
   render() {
@@ -11,6 +19,7 @@ class Header extends React.PureComponent {
     const titleBis = 'FINDER';
     const home = 'Acceuil';
     const search = 'Recherche';
+    const { classes } = this.props;
     return (
       <div className="flex items-center mt-8 relative">
         <Link to="/">
@@ -26,13 +35,13 @@ class Header extends React.PureComponent {
         </Link>
         <div className="flex items-center absolute right-0 mr-12">
           <Link to="/">
-            <Button color="primary">
+            <Button color="primary" className={classes.button}>
               {home}
             </Button>
             <span className="text-white">|</span>
           </Link>
           <Link to="/search">
-            <Button color="primary">
+            <Button color="primary" className={classes.button}>
               {search}
             </Button>
           </Link>
@@ -42,4 +51,8 @@ class Header extends React.PureComponent {
   }
 }
 
-export default Header;
+Header.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Header);

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Typography } from '@material-ui/core';
 import { bindActionCreators } from 'redux';
 import { getPopularMovies } from './store/actions/home.action';
 import PopularMoviesList from '../../components/Lists/PopularMoviesList';
-
 // eslint-disable-next-line react/prefer-stateless-function
 class HomePage extends Component {
   constructor(props) {
@@ -25,6 +25,9 @@ class HomePage extends Component {
     const movies = <PopularMoviesList />;
     return (
       <div className="bg-scroll">
+        <span className="text-white mt-8 ml-4">
+          Les 10 films les plus populaires du moment
+        </span>
         {tenPopularMovies !== null ? movies : noMovie}
       </div>
     );

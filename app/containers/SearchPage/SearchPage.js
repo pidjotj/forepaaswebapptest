@@ -1,9 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import MovieCard from '../../components/Cards/MovieCard';
 import { getResearchedMovie } from './store/actions/search.action';
-import { BASE_URL_SEARCH } from '../../utils/constants';
 import SearchMoviesList from '../../components/Lists/SearchMoviesList';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -11,7 +8,6 @@ class SearchPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {/* eslint-disable-next-line react/prop-types */}
         <SearchMoviesList />
       </React.Fragment>
     );
