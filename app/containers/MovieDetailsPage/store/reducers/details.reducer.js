@@ -1,7 +1,7 @@
 import * as Actions from '../actions/details.action';
 
 const initialState = {
-  popularMovies: []
+  movieDetails: []
 };
 
 // eslint-disable-next-line func-names

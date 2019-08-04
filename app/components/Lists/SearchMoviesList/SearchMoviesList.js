@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -22,35 +23,16 @@ const styles = (theme) => ({
 
 // eslint-disable-next-line react/prefer-stateless-function
 class SearchMoviesList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      moviesFromState: [],
-    };
-  }
-
-  componentDidMount() {
-    const { movies } = this.props;
-    if (movies) {
-      console.log('~~ movies', movies);
-      this.setState({ moviesFromState: movies });
-    }
-  }
-
   render() {
-    const { moviesFromState } = this.state;
-    const { movies } = this.props;
+    const { popularMovies } = this.props;
     const movieNull = <Typography className="text-white rounded-full" variant="h6">Pas de films</Typography>;
-    if (moviesFromState) {
-      console.log('okok', movies);
-    }
     return (
       <div className="mt-24">
-        {movies
+        {popularMovies
           ? <GridList cellHeight={200} className="justify-center " cols={2}>
-            {movies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
-          ))}
+            {popularMovies.map((movie) => (
+              <MovieCard key={movie.id} movie={movie} />
+            ))}
           </GridList> : movieNull}
       </div>
     );
@@ -58,7 +40,13 @@ class SearchMoviesList extends Component {
 }
 
 SearchMoviesList.propTypes = {
-  movies: PropTypes.object.isRequired
+  movies: PropTypes.array
 };
 
-export default SearchMoviesList;
+function mapStateToProps(state) {
+  return {
+    popularMovies: state.moviesReducer.popularMovies
+  };
+}
+
+export default connect(mapStateToProps)(SearchMoviesList);

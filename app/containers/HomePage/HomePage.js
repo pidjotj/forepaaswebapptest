@@ -18,20 +18,11 @@ class HomePage extends Component {
     this.props.getPopularMovies();
   }
 
-  componentDidMount() {
-    if (this.props.popularMovies) {
-      // eslint-disable-next-line react/prop-types,react/destructuring-assignment
-      const tempPopularMovies = this.props.popularMovies.popularMovies.data.results.slice(0, 10);
-      console.log('~~ tempPop', tempPopularMovies);
-      this.setState({ tenPopularMovies: tempPopularMovies });
-    }
-  }
-
   render() {
     // eslint-disable-next-line react/prop-types
     const { tenPopularMovies } = this.state;
     const noMovie = <div> <span>Error</span> </div>;
-    const movies = <PopularMoviesList movies={tenPopularMovies} />;
+    const movies = <PopularMoviesList />;
     return (
       <div className="bg-scroll">
         {tenPopularMovies !== null ? movies : noMovie}
@@ -40,6 +31,7 @@ class HomePage extends Component {
   }
 }
 
+// TODO essaie de recuperer les infos du store au meme moment que le store en lui meme, passer le getPopularMovies dans App
 function mapStateToProps(state) {
   return {
     popularMovies: state.moviesReducer
