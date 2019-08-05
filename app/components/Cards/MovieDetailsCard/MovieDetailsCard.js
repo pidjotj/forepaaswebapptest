@@ -32,12 +32,12 @@ class MovieDetailsCard extends Component {
     const recettes = movieDetails.revenue - movieDetails.budget;
     const releaseDate = currentMovie.release_date.split('-');
     return (
-      <div className="flex mt-8 ml-8">
-        <div className="lg:w-4/12 md:w-full">
+      <div className="flex mt-8 ml-8 mb-32">
+        <div className="w-4/12">
           {/* eslint-disable-next-line global-require */}
           <img src={currentMovie.poster_path !== null ? BASE_URL_IMAGE + currentMovie.poster_path : noPoster} alt="imageDetailMovie" className="w-full rounded-lg" />
         </div>
-        <div className="lg:w-8/12 md:w-full text-white font-mono pl-10">
+        <div className="w-8/12 text-white font-mono pl-10">
           <div>
             <span className="text-3xl mr-4">{currentMovie.title ? currentMovie.title : noTitle}</span>
             <span className="text-blue-400">({releaseDate[0] ? releaseDate[0] : noReleaseDate})</span>

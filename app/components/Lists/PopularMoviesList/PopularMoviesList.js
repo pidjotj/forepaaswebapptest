@@ -21,7 +21,7 @@ const PopularMoviesList = (props) => {
   console.log('~~ movies', popularMovies);
   const moviesNull = <span>Pas de films</span>;
   const moviesNotNull = (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen overflow-hidden">
       <Slider {...settings}>
         {popularMovies.map((movie) => (
           <div key={movie.id}>

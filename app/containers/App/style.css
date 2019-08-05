@@ -2,14 +2,11 @@
   max-width: calc(1200px + 16px * 1.5);
   margin: 0 auto;
   display: flex;
-  min-height: 100%;
   padding: 0 16px;
   flex-direction: column;
 }
 
 .background {
-  padding: 0;
-  margin: 0;
   background-image: url('https://i.ytimg.com/vi/n3dNkooj8rM/maxresdefault.jpg');
   background-size: cover;
   background-position: center;

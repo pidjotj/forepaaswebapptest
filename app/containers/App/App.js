@@ -12,17 +12,11 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from '../HomePage';
 import SearchPage from '../SearchPage';
 import MovieDetailsPage from '../MovieDetailsPage';
-
-// import HomePage from 'containers/HomePage/Loadable';
-// import FeaturePage from 'containers/FeaturePage/Loadable';
-// import NotFoundPage from 'containers/NotFoundPage/Loadable';
-// import Header from 'components/Header';
-// import Footer from 'components/Footer';
 import './style.css';
 import Header from '../../components/Header';
 
 const App = () => (
-  <div className="w-screen h-full bg-scroll background">
+  <div className="background w-128">
     <div className="app-wrapper">
       <Helmet
         titleTemplate="%s - Movie Finder"

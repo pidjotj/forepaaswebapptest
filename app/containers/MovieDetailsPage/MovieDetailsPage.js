@@ -35,7 +35,7 @@ class MovieDetailsPage extends Component {
     const movieNotNull = <MovieDetailsCard currentMovie={movie} />;
     const movieNull = <span>Il ny a pas de film</span>;
     return (
-      <div className="h-screen">
+      <div>
         <Link to={'/search'}>
           <IconButton aria-label="back" className={classes.margin} size="small">
             <ArrowBackwardIcon fontSize="inherit"/>

@@ -14,7 +14,6 @@ const styles = (theme) => ({
 // eslint-disable-next-line react/prefer-stateless-function
 class Header extends React.PureComponent {
   render() {
-    // TODO Creer un ficher constante
     const title = 'MOVIE';
     const titleBis = 'FINDER';
     const home = 'Acceuil';
