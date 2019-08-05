@@ -21,9 +21,9 @@ class Header extends React.PureComponent {
     const search = 'Recherche';
     const { classes } = this.props;
     return (
-      <div className="flex items-center mt-8 relative">
+      <div className="flex items-center mt-8">
         <Link to="/">
-          <div className="flex items-center">
+          <div className="flex md:w-full items-center">
             <img src={'https://cdn2.iconfinder.com/data/icons/movies-7/32/Movie_5-512.png'} alt="Logo" className="w-1/6 pl-12" />
             <span className="ml-8 font-mono text-white text-2xl italic">
               {title}
@@ -33,7 +33,7 @@ class Header extends React.PureComponent {
             </span>
           </div>
         </Link>
-        <div className="flex items-center absolute right-0 mr-12">
+        <div className="flex items-center float-right ml-12 mt-2">
           <Link to="/">
             <Button color="primary" className={classes.button}>
               {home}

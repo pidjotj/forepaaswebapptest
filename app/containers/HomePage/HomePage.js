@@ -25,7 +25,7 @@ class HomePage extends Component {
     return (
       <div className="bg-scroll mt-12">
         <span className="text-white ml-12 font-mono text-xl">
-          Les 10 films les plus populaires du moment
+          Les films populaires du moment
         </span>
         {tenPopularMovies !== null ? movies : noMovie}
       </div>
